@@ -1,32 +1,34 @@
-import config from"../config.json"
+import config from "../config.json"
 import styled from "styled-components"
 function HomePage() {
-    return( 
-    <div>
-        <Menu/>
-        <Header/>
-        <TimeLine/>
-    </div>
-    )
-  }
-  
-  export default HomePage
 
-  function Menu() {
-    return( 
+  console.log(config.playlists)
+  return (
     <div>
-        
+      <Menu />
+      <Header />
+      <TimeLine playlists={config.playlists} />
     </div>
-    )
-  }
-  
-const styledHeader = styled.div`
+  )
+}
+
+export default HomePage
+
+function Menu() {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+const StyledHeader = styled.div`
 img{
     width: 80px;
     height: 80px;
     border-radius: 50%;
   }
-  .user-infor{
+  .user-info{
     display: flex;
     align-items: center;
     width: 100%;
@@ -34,25 +36,52 @@ img{
     gap: 16px;
   }
 `;
-  function Header() {
-    return( 
-    <styledHeader>
-        <img src="banner"/>
-        <section className="user-info">
-        <img src={`https://github.com/${config.github}.png`}/>
+function Header() {
+  return (
+    <StyledHeader>
+      {/* <img src="banner"/>*/}
+      <section className="user-info">
+        <img src={`https://github.com/${config.github}.png`} />
         <div>
-            <h2>{config.name}</h2>
-            <p>{config.job}</p>
-        </div>   
-        </section>
-        
-    </styledHeader>
-    )
-  }
+          <h2>{config.name}</h2>
+          <p>{config.job}</p>
+        </div>
+      </section>
 
-  function TimeLine() {
-    return( 
-    <div>Welcome to TimeLine!</div>
-    )
-  }
-  
+    </StyledHeader>
+  )
+}
+
+function TimeLine(props) {
+  const playlistNames = Object.keys(props.playlists);
+
+  //Statement
+  //Retorno por expressão
+  return (
+    <div>
+      {playlistNames.map((playlistName) => {
+        const videos = props.playlists(playlistName);
+        console.log(videos);
+        return videos.map(() => {
+          return (
+            <section>
+              <h2>
+                {playlistName}
+              </h2>
+              <div>
+
+                <a href={videos.url}>
+                  <img src={videos.thumbs} />
+                </a>
+                <span>
+                  {videos.title}
+                </span>
+              </div>
+            </section>
+          )
+        })
+      })}
+
+    </div>
+  )
+}
