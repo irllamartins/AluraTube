@@ -1,16 +1,12 @@
-import config from "../config.json";
-import styled from "styled-components";
-import { CSSReset } from "../src/components/CSSReset";
-import Menu from "../src/components/Menu";
-import { StyledTimeline } from "../src/components/Timeline";
+import React from "react"
+import config from "../config.json"
+import styled from "styled-components"
+import { CSSReset } from "../src/components/CSSReset"
+import Menu from "../src/components/Menu"
+import { StyledTimeline } from "../src/components/Timeline"
 
 function HomePage() {
-    const estilosDaHomePage = {
-        // backgroundColor: "red" 
-    };
-
-    // console.log(config.playlists);
-
+    const [valorDoFiltro,setValorDoFiltro] = React.useState();
     return (
         <>
             <CSSReset />
@@ -20,9 +16,9 @@ function HomePage() {
                 flex: 1,
                 // backgroundColor: "red",
             }}>
-                <Menu />
+                <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
                 <Header />
-                <Timeline playlists={config.playlists}>
+                <Timeline searchValue={valorDoFiltro } playlists={config.playlists}>
                     Conteúdo
                 </Timeline>
             </div>
@@ -66,22 +62,24 @@ function Header() {
     )
 }
 
-function Timeline(propriedades) {
+function Timeline(props) {
     // console.log("Dentro do componente", propriedades.playlists);
-    const playlistNames = Object.keys(propriedades.playlists);
+    const playlistNames = Object.keys(props.playlists);
     // Statement
     // Retorno por expressão
     return (
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
-                const videos = propriedades.playlists[playlistName];
+                const videos = props.playlists[playlistName];
                 console.log(playlistName);
                 console.log(videos);
                 return (
                     <section>
                         <h2>{playlistName}</h2>
                         <div>
-                            {videos.map((video) => {
+                            {videos.filter((video)=>{
+                                return video.title.includes(props.searchValue)
+                            }).map((video) => {
                                 return (
                                     <a href={video.url}>
                                         <img src={video.thumb} />
