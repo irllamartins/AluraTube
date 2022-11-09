@@ -1,3 +1,15 @@
 instalação
 npm install next react react-dom
 npm install styled-components
+
+links css
+https://gist.github.com/omariosouto/dcb317de101426221c834cb6caa75a49
+
+github
+git init
+npx gitignore node
+git status
+git add .
+git commit -m "descricao"
+git remote add origin git@github.com:irllamartins/AluraTube.git
+git push -u origin main 
