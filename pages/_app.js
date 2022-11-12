@@ -1,4 +1,4 @@
-import react from "react"
+import React from "react"
 import { ThemeProvider } from "styled-components"
 import { CSSReset } from "../src/components/CSSReset"
 import ColorModeProvider,{ColorModeContext} from "../src/components/Menu/components/ColorMode";
@@ -18,17 +18,30 @@ const theme = {
         textColorBase: "#FFFFFF",
     }
 };
+function ProviderWrapper(props){
+    return(
+        <ColorModeProvider initialMode ="light">
+            {props.children}
+        </ColorModeProvider>
+    )
+}
 function MyApp({ Component, pageProps }) {
     const contexto = React.useContext(ColorModeContext)
     //colorModeProvide responsavel por mandar o status de cor
     //ThemeProvider responsavel por passar o objeto com cores para os demais componentes
     return (
-        <ColorModeProvider>
-            <ThemeProvider theme={theme.dark}>
+        
+            <ThemeProvider theme={theme[contexto.mode]}>
                 <CSSReset />
                 <Component {...pageProps} />
             </ThemeProvider >
-        </ColorModeProvider>
+       
     )
 }
-export default MyApp;
+export default function _App(props){
+    return(
+        <ProviderWrapper>
+            <MyApp {...props}/>
+        </ProviderWrapper>
+    )
+};
