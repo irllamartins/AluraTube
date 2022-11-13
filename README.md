@@ -9,5 +9,6 @@ Objetivos desenvolvidos
 
 > Desafios pessoais
 > - [ ] Criar um cadastro de categorias
+> - [ ] Criar uma categoria de user favorito
 > - [ ] Criar uma opção de personalizar cor no header
 > - [ ] Criar para que seja possivel fazer upload de videos localmente
