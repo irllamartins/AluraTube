@@ -3,7 +3,7 @@ Desenvolvido em 2022 na imersão Alura
 Objetivos desenvolvidos
 - Mostra um TimeLine composto por categorias
 - Cada categoria tem um conjunto de videos
-- Tem um bo~tao para cadastrar novos videos
+- Tem um botão para cadastrar novos videos
 - Barra de busca funcional
 - Dark/Light Mode
 
