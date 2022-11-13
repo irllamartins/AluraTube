@@ -4,6 +4,8 @@ npm install styled-components
 
 links css
 https://gist.github.com/omariosouto/dcb317de101426221c834cb6caa75a49
+https://gist.github.com/omariosouto/56d20e15bb1f2bbaaf5126eb2fb669ec
+https://gist.github.com/omariosouto/73904f576b956c8a95454cb612f8cb16
 
 github
 git init

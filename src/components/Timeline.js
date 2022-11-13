@@ -48,7 +48,7 @@ export const StyledTimeline = styled.div`
   /* Firefox */
   * {
     scrollbar-width: auto;
-    scrollbar-color: #b3b2b3 #ffffff;
+    scrollbar-color: ${({ theme }) => theme.backgroundLevel2} ${({ theme }) => theme.backgroundBase };
   }
 
   /* Chrome, Edge, and Safari */
@@ -57,12 +57,12 @@ export const StyledTimeline = styled.div`
   }
 
   *::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: ${({ theme }) => theme.backgroundBase };
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: #b3b2b3;
+    background-color: ${({ theme }) => theme.backgroundLevel2 };
     border-radius: 10px;
-    border: 3px solid #ffffff;
+    border: 3px solid ${({ theme }) => theme.backgroundBase };
   }
   `;
