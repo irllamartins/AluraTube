@@ -2,6 +2,7 @@ import { StyledRegisterVideo } from "./styles"
 import React from "react"
 import { createClient } from '@supabase/supabase-js'
 
+
 //custom hook
 function useForm(propsDoForm) {
     const [values, setValues] = React.useState(propsDoForm.initialValues);
@@ -9,9 +10,9 @@ function useForm(propsDoForm) {
     return {
         values,
         handleChange: (evento) => {
-            //console.log(evento.target);
+            console.log(evento.target);
             const value = evento.target.value;
-            const name = evento.target.name
+            const name = evento.target.name;
             setValues({
                 ...values,
                 [name]: value,
@@ -69,12 +70,12 @@ export default function RegisterVideo() {
                                 </button>
                                 <input
                                  placeholder="Titulo do video" 
-                                 name="Titulo"
+                                 name="titulo"
                                  value={formCadastro.values.titulo}
-                                  onChange={formCadastro.handleChange}/>
+                                 onChange={formCadastro.handleChange}/>
                                 <input 
                                 placeholder="URL" 
-                                name="URL"
+                                name="url"
                                 value={formCadastro.values.url}
                                  onChange={formCadastro.handleChange}/>
                                 <button type="submit">
