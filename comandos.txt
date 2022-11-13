@@ -1,11 +1,18 @@
 instalação
 npm install next react react-dom
 npm install styled-components
+npm install @supabase/supabase-js
+
+Figma
+https://www.figma.com/file/1acrju7CLwHkSh6e7xEk9h/Aluratube?node-id=5%3A2
 
 links css
 https://gist.github.com/omariosouto/dcb317de101426221c834cb6caa75a49
 https://gist.github.com/omariosouto/56d20e15bb1f2bbaaf5126eb2fb669ec
 https://gist.github.com/omariosouto/73904f576b956c8a95454cb612f8cb16
+
+link de doc
+https://www.npmjs.com/package/@supabase/supabase-js
 
 github
 git init

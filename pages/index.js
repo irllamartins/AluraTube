@@ -3,9 +3,50 @@ import config from "../config.json"
 import styled from "styled-components"
 import Menu from "../src/components/Menu"
 import { StyledTimeline } from "../src/components/Timeline"
+import { createClient } from '@supabase/supabase-js'
+import { videoService } from "../src/services/videoService";
+
 
 function HomePage() {
+    const service = videoService();
     const [valorDoFiltro,setValorDoFiltro] = React.useState("");
+    const [playlists, setPlaylists] = React.useState({});     // config.playlists
+
+    React.useEffect(() => {
+      /*  supabase.from("video")
+            .select("*")
+            .then((dados) => {
+          
+           
+            dados.data.forEach(
+                (video) => {
+               playlists[video.playlists]?.push(video);
+                }
+            )
+            setPlaylists(playlists);
+        });*/
+   service
+            .getAllVideos()
+            .then((dados) => {
+                console.log(dados.data);
+              
+                const novasPlaylists = {};
+                dados.data?.forEach(
+                    (video) => {
+                    if (!novasPlaylists[video.playlists]){
+                        novasPlaylists[video.playlists] = [];
+                    }
+                    novasPlaylists[video.playlists] = [
+                        video,
+                        ...novasPlaylists[video.playlists],
+                    ];
+                });
+
+                setPlaylists(novasPlaylists);
+            }); 
+    }, []);
+        
+    console.log(playlists)
     return (
         <>
             
@@ -17,7 +58,7 @@ function HomePage() {
             }}>
                 <Menu valorDoFiltro={valorDoFiltro} setValorDoFiltro={setValorDoFiltro}/>
                 <Header />
-                <Timeline searchValue={valorDoFiltro } playlists={config.playlists}>
+                <Timeline searchValue={valorDoFiltro } playlists={playlists}>
                     Conteúdo
                 </Timeline>
             </div>
