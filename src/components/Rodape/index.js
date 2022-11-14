@@ -5,7 +5,7 @@ function Footer() {
   return (
     <FooterBase>
       <p>
-        Desenvolvido por Irlla Martins 
+        Desenvolvido por Irlla Martins
       </p>
     </FooterBase>
   );
