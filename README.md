@@ -6,9 +6,11 @@ Objetivos desenvolvidos
 - Tem um botão para cadastrar novos videos
 - Barra de busca funcional
 - Dark/Light Mode
+- Cadastro de video funcional
+- espaço para users favorito
 
 > Desafios pessoais
 > - [ ] Criar um cadastro de categorias
-> - [ ] Criar uma categoria de user favorito
+> - [ X ] Criar uma categoria de user favorito
 > - [ ] Criar uma opção de personalizar cor no header
 > - [ ] Criar para que seja possivel fazer upload de videos localmente
