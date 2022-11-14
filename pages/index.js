@@ -5,7 +5,7 @@ import Menu from "../src/components/Menu"
 import { StyledTimeline } from "../src/components/Timeline"
 import { createClient } from '@supabase/supabase-js'
 import { videoService } from "../src/services/videoService";
-
+import Footer from "../src/components/Rodape"
 
 function HomePage() {
     const service = videoService();
@@ -13,18 +13,7 @@ function HomePage() {
     const [playlists, setPlaylists] = React.useState({});     // config.playlists
 
     React.useEffect(() => {
-      /*  supabase.from("video")
-            .select("*")
-            .then((dados) => {
-          
-           
-            dados.data.forEach(
-                (video) => {
-               playlists[video.playlists]?.push(video);
-                }
-            )
-            setPlaylists(playlists);
-        });*/
+     
    service
             .getAllVideos()
             .then((dados) => {
