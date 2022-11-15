@@ -3,8 +3,34 @@
     "job": "Front-end",
     "bg": "https://images.unsplash.com/photo-1667857399206-dc6d15189adc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
     "github": "irllamartins",
-    "favorite":{
-
+    "favoritos": {
+        "youtube": [
+            {
+                "name": "Irlla Martins1",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins2",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins3",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins4",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins5",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins6",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins7",
+                "github": "irllamartins"
+            }, {
+                "name": "Irlla Martins8",
+                "github": "irllamartins"
+            }
+        ]
     },
     "playlists": {
         "jogos": [
